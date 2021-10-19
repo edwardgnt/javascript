@@ -38,4 +38,18 @@ const hasInexpensiveItems = items.every((item) => {
     return item.price <= 100;
 });
 
+// Reduce method - gives total
+const total = items.reduce((currentTotal, item) => {
+    return item.price + currentTotal;
+}, 0);
+
+
+
+// Includes method - check if value in array
+const numArray = [1, 2, 3, 4, 5];
+
+const includesTwo = numArray.includes(2);
+
+console.log(includesTwo);
+
 
