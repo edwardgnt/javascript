@@ -25,26 +25,38 @@ function createPost(post) {
             posts.push(post);
 
             const error = false;
+
             if(!error) {
-                resolve();
+                resolve()
             } else {
-                reject('Error: Something went wrong.');
+                reject('Error: Something went wrong');
             }
         }, 2000);
     });
 }
 
-// createPost({ title: 'Post Three', body: 'This is post three.' })
+// createPost({ title: 'Post Three', body: 'This is post three.'})
 //     .then(getPosts)
 //     .catch(err => console.log(err));
 
+
+// Promise.all
 const promise1 = Promise.resolve('Hello World');
 const promise2 = 10;
-const promise3 = new Promise((resolve, reject) =>
+const promise3 = new Promise((resolve, reject) => 
     setTimeout(resolve, 2000, 'Goodbye'));
-    
-const promise4 = fetch('https://jsonplaceholder.typicode.com/users')
+
+// With fetch you have to do two .thens    
+const promise4 = fetch('https://jsonplaceholder.typicode.com/posts')
     .then(res => res.json());
+  
+
 
 Promise.all([promise1, promise2, promise3, promise4])
     .then((values) => console.log(values));
+
+
+// Get values form promise4
+promise4.then((item) => {
+    console.log(item);
+})
