@@ -8,48 +8,46 @@ const items = [
     { name: 'Keybord', price: 25 }
 ];
 
-// filter method
-const filteredItems = items.filter((item) => {
+// filter
+const filterItems = items.filter((item) => {
     return item.price <= 100;
-});
+})
 
-// Map method
+// map
 const itemNames = items.map((item) => {
     return item.name;
 })
 
-// Find method
+// find
 const foundItem = items.find((item) => {
     return item.name === 'Book';
-});
+})
 
-// Foreach method
+// forEach
 items.forEach((item) => {
- //   console.log(item);
-});
+    // console.log(item);
+})
 
-// Some method
-// const hasInexpensiveItems = items.some((item) => {
-//     return item.price <= 100;
-// });
+// some - returns true or false
+const hasInexpensiveItems = items.some((item) => {
+    return item.price <= 100
+})
 
-// Every method
-const hasInexpensiveItems = items.every((item) => {
-    return item.price <= 100;
-});
+const hasEveryInexpensiveItems = items.every((item) => {
+    return item.price <= 100
+})
 
-// Reduce method - gives total
+// reduce - get total 
 const total = items.reduce((currentTotal, item) => {
-    return item.price + currentTotal;
-}, 0);
+    return item.price + currentTotal
+}, 0)
 
+// includes
+const itemsArray = [1,2,3,4,5]
 
+const includesTwo = itemsArray.includes(2)
 
-// Includes method - check if value in array
-const numArray = [1, 2, 3, 4, 5];
+console.log(includesTwo)
 
-const includesTwo = numArray.includes(2);
-
-console.log(includesTwo);
 
 
